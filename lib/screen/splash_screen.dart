@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:browser_app/screen/Home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2),
+    Timer(const Duration(seconds: 4),
     ()=>Navigator.pushReplacement(context,MaterialPageRoute(builder:(context) => Home_Page())));
   }
 
