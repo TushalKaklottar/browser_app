@@ -85,7 +85,7 @@ class _Home_PageState extends State<Home_Page> {
                   context: context,
                   isScrollControlled: true,
                   builder: (BuildContext context) {
-                    return Container(
+                    return SizedBox(
                       height: 600,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +97,7 @@ class _Home_PageState extends State<Home_Page> {
                               children: [
                                 Container(
                                   width: 300,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                         color: Colors.black,
@@ -111,11 +111,11 @@ class _Home_PageState extends State<Home_Page> {
                                         onPressed: () {
                                           Navigator.of(context).pop();
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.close,
                                         ),
                                       ),
-                                      Text(
+                                      const Text(
                                         "Dismiss",
                                       ),
                                     ],
@@ -126,23 +126,21 @@ class _Home_PageState extends State<Home_Page> {
                           ),
                           Expanded(
                             flex: 10,
-                            child: Container(
-                              child: ListView.builder(
-                                itemCount: bookMark.length,
-                                itemBuilder: (context, i) => ListTile(
-                                  title: Text("${urlBookmark1[i]}"),
-                                  subtitle: Text("${bookMark[i]}"),
-                                  trailing: IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        bookMark.remove(bookMark[i]);
-                                        urlBookmark1.remove(urlBookmark1[i]);
-                                        Navigator.of(context).pop();
-                                      });
-                                    },
-                                    icon: Icon(
-                                      Icons.delete,
-                                    ),
+                            child: ListView.builder(
+                              itemCount: bookMark.length,
+                              itemBuilder: (context, i) => ListTile(
+                                title: Text("${urlBookmark1[i]}"),
+                                subtitle: Text("${bookMark[i]}"),
+                                trailing: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      bookMark.remove(bookMark[i]);
+                                      urlBookmark1.remove(urlBookmark1[i]);
+                                      Navigator.of(context).pop();
+                                    });
+                                  },
+                                  icon: const Icon(
+                                    Icons.delete,
                                   ),
                                 ),
                               ),
@@ -180,7 +178,7 @@ class _Home_PageState extends State<Home_Page> {
                             },
                           ),
                           RadioListTile(
-                            title: Text("Yahoo"),
+                            title: const Text("Yahoo"),
                             value: "https://in.search.yahoo.com/?fr2=inr",
                             groupValue: Url,
                             onChanged: (val) {
@@ -320,7 +318,7 @@ class _Home_PageState extends State<Home_Page> {
                           ),
                           );
                         },
-                        icon: Icon(
+                        icon: const Icon(
                          Icons.home
                         )
                     ),
@@ -334,7 +332,7 @@ class _Home_PageState extends State<Home_Page> {
                           );
                           print(await inAppWebViewController?.getUrl());
                         },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.bookmark_add_outlined,
                       ),
                     ),
@@ -344,7 +342,7 @@ class _Home_PageState extends State<Home_Page> {
                           await inAppWebViewController?.goBack();
                         }
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back_ios,
                       ),
                     ),
@@ -352,7 +350,7 @@ class _Home_PageState extends State<Home_Page> {
                       onPressed: () async {
                         await inAppWebViewController?.reload();
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.refresh,
                       ),
                     ),
@@ -362,7 +360,7 @@ class _Home_PageState extends State<Home_Page> {
                           await inAppWebViewController?.goForward();
                         }
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_forward_ios,
                       ),
                     ),

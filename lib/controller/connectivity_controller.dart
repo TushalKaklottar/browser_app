@@ -1,7 +1,6 @@
 import 'package:browser_app/modals/connectivity_modal.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class ConnectivityProvider extends ChangeNotifier {
 
